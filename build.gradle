@@ -90,7 +90,7 @@ android {
 
     defaultConfig {
         versionCode 576
-        versionName "1.2.1"
+        versionName "1.2.1-testing"
 
         applicationId "com.b44t.messenger"
         multiDexEnabled true
@@ -151,7 +151,11 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            applicationIdSuffix ".beta"
+            //applicationIdSuffix ".beta"
+
+            //cs:
+            applicationIdSuffix ".testing"
+            debuggable false
         }
         release {
             // minification and proguard disabled for now.
