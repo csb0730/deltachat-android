@@ -67,4 +67,21 @@
         android:contentDescription="@string/menu_scroll_to_bottom"
         android:src="@drawable/ic_scroll_down"/>
 
+    <ImageButton
+        android:id="@+id/scroll_to_up_button"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="top|end"
+        android:padding="5dp"
+        android:background="?attr/floating_mini_bg"
+        android:tint="@color/dark_red2"
+        android:elevation="1dp"
+        android:alpha="0.9"
+        android:contentDescription="@string/menu_scroll_to_up"
+        android:src="@drawable/ic_scroll_up"/>
+
 </FrameLayout>

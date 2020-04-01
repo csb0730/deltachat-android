@@ -66,6 +66,7 @@ import org.thoughtcrime.securesms.database.Address;
 import org.thoughtcrime.securesms.mms.GlideApp;
 import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.recipients.Recipient;
+import org.thoughtcrime.securesms.util.BadgeUtil;
 import org.thoughtcrime.securesms.util.Debouncer;
 import org.thoughtcrime.securesms.util.SaveAttachmentTask;
 import org.thoughtcrime.securesms.util.StickyHeaderDecoration;
@@ -77,6 +78,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+
+import me.leolin.shortcutbadger.ShortcutBadger;
 
 import static com.b44t.messenger.DcContact.DC_CONTACT_ID_SELF;
 import static org.thoughtcrime.securesms.util.RelayUtil.REQUEST_RELAY;
@@ -100,6 +103,7 @@ public class ConversationFragment extends Fragment
     private Recipient                   recipient;
     private long                        chatId;
     private int                         startingPosition;
+    private int                         lastScrollToUpPos;
     private boolean                     firstLoad;
     private ActionMode                  actionMode;
     private Locale                      locale;
@@ -107,6 +111,7 @@ public class ConversationFragment extends Fragment
     private RecyclerView.ItemDecoration lastSeenDecoration;
     private StickyHeaderDecoration      dateDecoration;
     private View                        scrollToBottomButton;
+    private View                        scrollToUpButton;
     private View                        floatingLocationButton;
     private TextView                    noMessageTextView;
     private ApplicationDcContext        dcContext;
@@ -135,10 +140,12 @@ public class ConversationFragment extends Fragment
         final View view = inflater.inflate(R.layout.conversation_fragment, container, false);
         list                   = ViewUtil.findById(view, android.R.id.list);
         scrollToBottomButton   = ViewUtil.findById(view, R.id.scroll_to_bottom_button);
+        scrollToUpButton       = ViewUtil.findById(view, R.id.scroll_to_up_button);
         floatingLocationButton = ViewUtil.findById(view, R.id.floating_location_button);
         noMessageTextView      = ViewUtil.findById(view, R.id.no_messages_text_view);
 
         scrollToBottomButton.setOnClickListener(v -> scrollToBottom());
+        scrollToUpButton.setOnClickListener(v -> scrollToUp());
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, true);
         list.setHasFixedSize(false);
@@ -206,6 +213,7 @@ public class ConversationFragment extends Fragment
         super.onResume();
 
         dcContext.marknoticedChat((int) chatId);
+        BadgeUtil.update(this.getContext(), dcContext.getFreshMsgs().length);
         if (list.getAdapter() != null) {
             list.getAdapter().notifyDataSetChanged();
         }
@@ -255,6 +263,8 @@ public class ConversationFragment extends Fragment
         this.recipient         = Recipient.from(getActivity(), Address.fromChat((int)this.chatId));
         this.startingPosition  = this.getActivity().getIntent().getIntExtra(ConversationActivity.STARTING_POSITION_EXTRA, -1);
         this.firstLoad         = true;
+
+        this.lastScrollToUpPos = 0;
 
         OnScrollListener scrollListener = new ConversationScrollListener(getActivity());
         list.addOnScrollListener(scrollListener);
@@ -316,6 +326,26 @@ public class ConversationFragment extends Fragment
         } else {
             list.scrollToPosition(0);
         }
+        lastScrollToUpPos = 0;
+    }
+
+    public void scrollToUp() {
+		int 	itemCount 	= getListAdapter().getItemCount();
+		String 	s 			= String.format("scrollToUp(), getItemCount(): %d", itemCount);
+
+		Log.i(TAG, s);
+
+		if (itemCount > 100) {
+			lastScrollToUpPos += (itemCount / 10);
+		} else if (itemCount > 20) {
+			lastScrollToUpPos += (itemCount / 5);
+		} else {
+			lastScrollToUpPos = itemCount;
+		}
+		if (lastScrollToUpPos > itemCount) {
+			lastScrollToUpPos = itemCount;
+		}
+        list.scrollToPosition(lastScrollToUpPos-1);
     }
 
     public void setLastSeen(long lastSeen) {
@@ -542,10 +572,12 @@ public class ConversationFragment extends Fragment
 
             if (currentlyAtBottom && !wasAtBottom) {
                 ViewUtil.animateOut(scrollToBottomButton, scrollButtonOutAnimation, View.INVISIBLE);
+                ViewUtil.animateOut(scrollToUpButton, scrollButtonOutAnimation, View.INVISIBLE);
             }
 
             if (currentlyAtZoomScrollHeight && !wasAtZoomScrollHeight) {
                 ViewUtil.animateIn(scrollToBottomButton, scrollButtonInAnimation);
+                ViewUtil.animateIn(scrollToUpButton, scrollButtonInAnimation);
             }
 
 //      if (positionId != lastPositionId) {
@@ -613,6 +645,7 @@ public class ConversationFragment extends Fragment
             }
         }
         dcContext.markseenMsgs(ids);
+        BadgeUtil.update(this.getContext(), dcContext.getFreshMsgs().length);
     }
 
 

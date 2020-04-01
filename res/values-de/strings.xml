@@ -162,6 +162,7 @@
     <string name="menu_play">Wiedergabe</string>
     <string name="menu_pause">Pause</string>
     <string name="menu_scroll_to_bottom">Zum Ende scrollen</string>
+    <string name="menu_scroll_to_up">Zum Ersten Eintrag scrollen</string>
     <string name="menu_scroll_to_top">Zum Anfang scrollen</string>
     <string name="menu_help">Hilfe</string>
     <string name="menu_select_all">Alles auswählen</string>

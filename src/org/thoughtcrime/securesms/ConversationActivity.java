@@ -876,7 +876,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         attachmentManager.captureVideo(this, RECORD_VIDEO);
       }
       else {
-        Toast.makeText(this, "This device does not support video-compression (requires Android 4.4 KitKat)", Toast.LENGTH_LONG).show();
+        // Fallback: use uncompressed file if recoding not available
+        Toast.makeText(this, "This device does not support video-compression (requires Android 4.4 KitKat), raw file can be attached", Toast.LENGTH_LONG).show();
+        AttachmentManager.selectDocument(this, PICK_DOCUMENT); break;
       }
       break;
     }
@@ -1007,7 +1009,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
           }
           else if (MediaUtil.isVideoType(contentType) && slideDeck.getDocumentSlide()==null) {
             msg = new DcMsg(dcContext, DcMsg.DC_MSG_VIDEO);
-            recompress = DcMsg.DC_MSG_VIDEO;
+            //cs: no recompress
+            //recompress = DcMsg.DC_MSG_VIDEO;
           }
           else {
             msg = new DcMsg(dcContext, DcMsg.DC_MSG_FILE);

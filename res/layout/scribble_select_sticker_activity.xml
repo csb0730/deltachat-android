@@ -5,26 +5,19 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <com.google.android.material.tabs.TabLayout
-            android:id="@+id/camera_sticker_tabs"
+    <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="4dp"
-            android:background="?attr/colorPrimary"
-            app:tabPaddingStart="3dp"
-            app:tabPaddingEnd="3dp"
-            app:tabBackground="?attr/colorPrimary"
-            app:tabIndicatorColor="@color/white"
-            app:tabTextColor="@color/gray10"
-            app:tabSelectedTextColor="@color/white"
+            app:tabBackground="@color/delta_primary"
             app:tabMode="fixed"/>
 
-    <androidx.viewpager.widget.ViewPager
-            android:id="@+id/camera_sticker_pager"
+    <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="0px"
             android:layout_weight="1"
-            android:background="@color/gray20" />
+            android:background="@android:color/white" />
 
 </LinearLayout>
 

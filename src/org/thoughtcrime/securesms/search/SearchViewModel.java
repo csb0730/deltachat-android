@@ -30,7 +30,7 @@ class SearchViewModel extends ViewModel {
   SearchViewModel(@NonNull SearchRepository searchRepository) {
     this.searchResult     = new ObservingLiveData();
     this.searchRepository = searchRepository;
-    this.debouncer        = new Debouncer(150);
+    this.debouncer        = new Debouncer(800);
 
 //    searchResult.registerContentObserver(new ContentObserver(new Handler()) {
 //      @Override

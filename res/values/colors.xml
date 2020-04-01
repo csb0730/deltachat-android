@@ -23,6 +23,7 @@
     <color name="gray95">#ff111111</color>
     <color name="purple_led">#9c1ab1</color>
     <color name="dark_red">#ff330000</color>
+    <color name="dark_red2">#ffd50000</color>
     <color name="dark_purple">#ff260d1a</color>
     <color name="light_green">#ffefffde</color>
     <color name="green">#ff70b15c</color>

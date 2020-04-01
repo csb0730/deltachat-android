@@ -14,11 +14,21 @@ public class MessageNotifierCompat {
 
     private static MessageNotifier instance;
 
+    /*
     public static void init(Context context) {
         if (instance != null) {
             return;
         }
 
+        if (Build.VERSION.SDK_INT < 23) {
+            instance = new MessageNotifierPreApi23(context);
+        } else {
+            instance = new MessageNotifierApi23(context);
+        }
+    }
+    */
+
+    public MessageNotifierCompat(Context context) {
         if (Build.VERSION.SDK_INT < 23) {
             instance = new MessageNotifierPreApi23(context);
         } else {

@@ -1,4 +1,22 @@
-# Delta Chat Android Changelog
+# Delta Chat Android Changelog (csb0730)
+
+## v1.2.2-testing
+2020-03-25
+done:
+* light blue icons to distinguish from original deltachat
+* new scroll-up button in chat view
+* debouncer for search increased to 700ms
+* integration PR "bringback shortcut badger"
+* do not recode video before sending as fallback for Android < 4.4
+
+planned:
+* backup2 (prevent extensive memory usage at import; imex.rs)
+
+check:
+* show msg in spite of missing Message ID (done)
+
+Changes done by Christian Schneider
+
 
 ## v1.2.1
 2020-03-04

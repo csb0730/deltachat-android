@@ -18,21 +18,22 @@ package org.thoughtcrime.securesms.scribbles;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
+import android.view.MenuItem;
 
-import com.google.android.material.tabs.TabLayout;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import android.view.MenuItem;
+
+import com.google.android.material.tabs.TabLayout;
 
 import org.thoughtcrime.securesms.R;
 
 public class StickerSelectActivity extends FragmentActivity implements StickerSelectFragment.StickerSelectionListener {
 
-  private static final String TAG = StickerSelectActivity.class.getSimpleName();
+  private static final String TAG = StickerSelectActivity.class.getName();
 
   public static final String EXTRA_STICKER_FILE = "extra_sticker_file";
 
@@ -49,10 +50,10 @@ public class StickerSelectActivity extends FragmentActivity implements StickerSe
     super.onCreate(savedInstanceState);
     setContentView(R.layout.scribble_select_sticker_activity);
 
-    ViewPager viewPager = findViewById(R.id.camera_sticker_pager);
+    ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
     viewPager.setAdapter(new StickerPagerAdapter(getSupportFragmentManager(), this));
 
-    TabLayout tabLayout = findViewById(R.id.camera_sticker_tabs);
+    TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
     tabLayout.setupWithViewPager(viewPager);
 
     for (int i=0;i<tabLayout.getTabCount();i++) {
