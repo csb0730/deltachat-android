@@ -878,7 +878,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       else {
         // Fallback: use uncompressed file if recoding not available
         Toast.makeText(this, "This device does not support video-compression (requires Android 4.4 KitKat), raw file can be attached", Toast.LENGTH_LONG).show();
-        AttachmentManager.selectDocument(this, PICK_DOCUMENT); break;
+        AttachmentManager.selectDocument(this, PICK_DOCUMENT);
       }
       break;
     }
