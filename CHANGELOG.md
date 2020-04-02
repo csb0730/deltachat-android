@@ -8,6 +8,7 @@ done:
 * debouncer for search increased to 700ms
 * integration PR "bringback shortcut badger"
 * do not recode video before sending as fallback for Android < 4.4
+* backport of scribble module to recover image editing at Android 4.1
 
 planned:
 * backup2 (prevent extensive memory usage at import; imex.rs)
