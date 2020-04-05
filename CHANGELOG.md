@@ -2,8 +2,12 @@
 
 ## v1.2.2-testing
 2020-03-25
+
+This version is able to be installed in parallel to original Delta Chat version
+at one device because is uses different applicationIdSuffix ".testing".
+
 done:
-* light blue icons to distinguish from original deltachat
+* light blue (dev) icons to distinguish from original deltachat
 * new scroll-up button in chat view
 * debouncer for search increased to 700ms
 * integration PR "bringback shortcut badger"
@@ -16,7 +20,7 @@ planned:
 check:
 * show msg in spite of missing Message ID (done)
 
-Changes done by Christian Schneider
+Changes by Christian Schneider
 
 
 ## v1.2.1
