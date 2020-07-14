@@ -91,7 +91,7 @@ android {
 
     defaultConfig {
         versionCode 576
-        versionName "1.2.2-testing"
+        versionName "1.2.3-testing"
 
         applicationId "com.b44t.messenger"
         multiDexEnabled true
@@ -170,6 +170,10 @@ android {
             // otherwise problems might be noticed delayed only
             minifyEnabled false
             signingConfig signingConfigs.release
+
+            // cs
+            applicationIdSuffix ".testing"
+            debuggable false
         }
     }
 

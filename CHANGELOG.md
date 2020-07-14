@@ -1,5 +1,21 @@
 # Delta Chat Android Changelog (csb0730)
 
+## v1.2.3-testing
+2020-07-15
+
+This version is able to be installed in parallel to original Delta Chat version
+at one device because is uses different applicationIdSuffix ".testing".
+
+done:
+* backup2 (prevent extensive memory usage at import; imex.rs)
+  use of sqlar format and saving db as a blob file in archive => no vacuum at import necessary.
+* r-core PR #1576 issue #1575 bad formatting, spam filter (mimfactory.rs)
+* check if msg in spite of missing Message ID is shown (done)
+
+Changes by Christian Schneider
+
+
+
 ## v1.2.2-testing
 2020-03-25
 
@@ -13,6 +29,7 @@ done:
 * integration PR "bringback shortcut badger"
 * do not recode video before sending as fallback for Android < 4.4
 * backport of scribble module to recover image editing at Android 4.1
+* disable outdated reminder
 
 planned:
 * backup2 (prevent extensive memory usage at import; imex.rs)

@@ -40,6 +40,8 @@ public class OutdatedReminder extends Reminder {
     }
 
     public static boolean isEligible(Context context) {
+        
+        /* cs: disable this function
         if (context == null) {
             return false;
         }
@@ -58,6 +60,8 @@ public class OutdatedReminder extends Reminder {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        */
+        
         return false;
     }
 }
