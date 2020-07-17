@@ -91,7 +91,8 @@ android {
 
     defaultConfig {
         versionCode 576
-        versionName "1.2.3-testing"
+        //versionName "1.2.3-testing"
+        versionName "1.2.4-beta"
 
         applicationId "com.b44t.messenger"
         multiDexEnabled true
@@ -152,10 +153,10 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
-            //applicationIdSuffix ".beta"
 
             //cs:
-            applicationIdSuffix ".testing"
+            applicationIdSuffix ".beta"
+            //applicationIdSuffix ".testing"
             debuggable false
         }
         release {

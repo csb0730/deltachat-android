@@ -1,5 +1,15 @@
 # Delta Chat Android Changelog (csb0730)
 
+## v1.2.4-beta
+2020-07-16
+
+This version uses .beta application suffix and replaces production version
+
+* grey icons
+* all changes from 1.2.3-testing
+* 1.27.1 r-core
+
+
 ## v1.2.3-testing
 2020-07-15
 
