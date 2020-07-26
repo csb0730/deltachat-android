@@ -7,7 +7,7 @@ This version uses .beta application suffix and replaces production version
 
 * grey icons
 * all changes from 1.2.3-testing
-* 1.27.1 r-core
+* 1.27.2 r-core
 
 
 ## v1.2.3-testing
