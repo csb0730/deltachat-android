@@ -7,7 +7,7 @@
 # call me from deltachat base dir  
 
 
-tar --exclude="*.db" --exclude="target" --exclude="*-blobs" --exclude="*.bak" -cvpf ~/tmp/deltachat-backup-$(date +%Y-%m-%dT%H-%M).tar ../deltachat-android
+tar --exclude="*.db" --exclude="target" --exclude="*-blobs" --exclude="*.bak" --exclude="build" -zcvpf ~/tmp/deltachat-backup-$(date +%Y-%m-%dT%H-%M).tar.gz ../deltachat-android
 
 
 

@@ -10,7 +10,7 @@ rm -r -f ~/tmp/deltachat-backup/*
 mkdir ~/tmp/deltachat-backup
 
 cd ..
-rsync -a --progress deltachat-android/ ~/tmp/deltachat-backup --exclude="*.db" --exclude="target" --exclude="*-blobs" --exclude="*.bak"
+rsync -a --progress deltachat-android/ ~/tmp/deltachat-backup --exclude="*.db" --exclude="target" --exclude="*-blobs" --exclude="*.bak" --exclude="build"
 cd deltachat-android
 
 
