@@ -29,6 +29,9 @@ public class NetworkStateReceiver extends BroadcastReceiver {
                     Log.i("DeltaChat", "maybeNetwork() returned");
                 }).start();
             }
+            else {
+                Log.i("DeltaChat", "++++++++++++++ Not connected ++++++++++++++++++");
+            }
         }
         catch (Exception e) {
             e.printStackTrace();

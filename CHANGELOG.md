@@ -1,9 +1,15 @@
 # Delta Chat Android Changelog (csb0730)
 
 ## v1.2.6-beta
+2020-31-07
+
+* logging of "Not connected" events
+
+
+## v1.2.6-beta
 2020-29-07
 
-* 1.27.3 r-core (extension of dc_maybe_network() interface to java bindings)
+Not done:  * 1.27.3 r-core (extension of dc_maybe_network() interface to java bindings)
 
 
 ## v1.2.5-beta
