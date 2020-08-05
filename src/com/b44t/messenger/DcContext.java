@@ -100,7 +100,7 @@ public class DcContext {
     public native void         performSmtpJobs      ();
     public native void         performSmtpIdle      ();
 
-    public native void         maybeNetwork         ();
+    public native void         maybeNetwork         (int status);
     public native void         setConfig            (String key, String value);
     public void                setConfigInt         (String key, int value) { setConfig(key, Integer.toString(value)); }
     public native boolean      setConfigFromQr      (String qr);

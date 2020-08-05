@@ -382,9 +382,9 @@ JNIEXPORT void Java_com_b44t_messenger_DcContext_performSmtpIdle(JNIEnv *env, jo
 }
 
 
-JNIEXPORT void Java_com_b44t_messenger_DcContext_maybeNetwork(JNIEnv *env, jobject obj)
+JNIEXPORT void Java_com_b44t_messenger_DcContext_maybeNetwork(JNIEnv *env, jobject obj, jint status)
 {
-	dc_maybe_network(get_dc_context(env, obj));
+	dc_maybe_network(get_dc_context(env, obj), status);
 }
 
 

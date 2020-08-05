@@ -69,6 +69,7 @@
     <!-- For Holo Light Dialog Activity Styling Emulation -->
 
     <style name="ComposeEditText" parent="@style/Signal.Text.Body">
+        <item name="android:textSize">14sp</item>
         <item name="android:padding">2dp</item>
         <item name="android:background">@null</item>
         <item name="android:maxLines">8</item>
@@ -78,7 +79,7 @@
         <item name="android:autoText">true</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:imeOptions">flagNoEnterAction</item>
-        <item name="android:inputType">textAutoCorrect|textCapSentences|textMultiLine</item>
+        <item name="android:inputType">textAutoCorrect|textCapSentences|textMultiLine|textNoSuggestions</item>
         <item name="android:contentDescription">@string/chat_input_placeholder</item>
     </style>
 
