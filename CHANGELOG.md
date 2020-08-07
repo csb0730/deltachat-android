@@ -1,13 +1,20 @@
 # Delta Chat Android Changelog (csb0730)
 
 ## v1.2.6-beta
-2020-31-07
+2020-08-07
+
+* don't log dalvikvm lines
+* r-core: introduce last_network_online status
+
+
+## v1.2.6-beta
+2020-07-31
 
 * logging of "Not connected" events
 
 
 ## v1.2.6-beta
-2020-29-07
+2020-07-29
 
 Not done:  * 1.27.3 r-core (extension of dc_maybe_network() interface to java bindings)
 

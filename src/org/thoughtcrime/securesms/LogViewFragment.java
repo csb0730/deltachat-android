@@ -138,8 +138,10 @@ public class LogViewFragment extends Fragment {
 
       String line;
       while ((line = bufferedReader.readLine()) != null) {
-        log.append(line);
-        log.append(separator);
+        if (!line.contains("dalvikvm")){
+            log.append(line);
+            log.append(separator);
+        }
       }
       return log.toString();
     } catch (IOException ioe) {
