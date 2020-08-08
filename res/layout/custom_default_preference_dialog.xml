@@ -19,7 +19,8 @@
               android:layout_marginTop="16dip"
               android:layout_marginBottom="16dip"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"/>
+              android:layout_height="match_parent"
+              android:inputType="textNoSuggestions"/>
 
     <EditText android:id="@+id/custom_edit"
               android:layout_marginLeft="16dip"
@@ -28,6 +29,7 @@
               android:layout_marginBottom="16dip"
               android:visibility="gone"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"/>
+              android:layout_height="match_parent"
+              android:inputType="textNoSuggestions"/>
 
 </LinearLayout>

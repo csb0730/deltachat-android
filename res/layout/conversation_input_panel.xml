@@ -13,7 +13,8 @@
         android:paddingBottom="6dp"
         android:clipChildren="false"
         android:clipToPadding="false"
-        android:background="?attr/input_panel_bg_color">
+        android:background="?attr/input_panel_bg_color"
+        android:inputType="textNoSuggestions">
 
     <FrameLayout
         android:layout_width="0dp"
