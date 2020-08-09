@@ -46,7 +46,7 @@ final class HiddenEditText extends AppCompatEditText {
     setFocusableInTouchMode(true);
     setBackgroundColor(Color.TRANSPARENT);
     setTextSize(TypedValue.COMPLEX_UNIT_SP, 1);
-    setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+    setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_MULTI_LINE | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
     clearFocus();
   }
 

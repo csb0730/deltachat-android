@@ -43,7 +43,7 @@ public class ContactFilterToolbar extends Toolbar {
     this.clearToggle     = ViewUtil.findById(this, R.id.search_clear);
     this.toggleContainer = ViewUtil.findById(this, R.id.toggle_container);
 
-    searchText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+    searchText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
 
     this.clearToggle.setOnClickListener(new View.OnClickListener() {
       @Override
