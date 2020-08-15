@@ -94,8 +94,9 @@ public class ApplicationContext extends MultiDexApplication implements DefaultLi
             .build();
     PeriodicWorkRequest fetchWorkRequest = new PeriodicWorkRequest.Builder(
             FetchWorker.class,
-            PeriodicWorkRequest.MIN_PERIODIC_INTERVAL_MILLIS, // usually 15 minutes
-            TimeUnit.MILLISECONDS,
+            //(PeriodicWorkRequest.MIN_PERIODIC_INTERVAL_MILLIS * 2), // usually 15 minutes (cs: * 2)
+            30,
+            TimeUnit.MINUTES,
             PeriodicWorkRequest.MIN_PERIODIC_FLEX_MILLIS, // the start may be preferred by up to 5 minutes, so we run every 10-15 minutes
             TimeUnit.MILLISECONDS)
             .setConstraints(constraints)

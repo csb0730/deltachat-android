@@ -69,10 +69,10 @@
     <!-- For Holo Light Dialog Activity Styling Emulation -->
 
     <style name="ComposeEditText" parent="@style/Signal.Text.Body">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:padding">2dp</item>
         <item name="android:background">@null</item>
-        <item name="android:maxLines">8</item>
+        <item name="android:maxLines">6</item>
         <item name="android:maxLength">64000</item>
         <item name="android:textColor">?conversation_item_outgoing_text_primary_color</item>
         <item name="android:capitalize">sentences</item>

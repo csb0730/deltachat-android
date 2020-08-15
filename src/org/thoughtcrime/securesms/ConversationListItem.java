@@ -322,7 +322,7 @@ public class ConversationListItem extends RelativeLayout
                                      @Nullable String highlight)
   {
     if (TextUtils.isEmpty(value)) {
-      return new SpannableString("");
+      return new SpannableString(" ");
     }
 
     value = value.replaceAll("\n", " ");

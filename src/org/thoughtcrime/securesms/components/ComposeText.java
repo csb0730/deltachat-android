@@ -81,7 +81,8 @@ public class ComposeText extends EmojiEditText {
 
     if (subHint != null) {
       this.subHint = new SpannableString(subHint);
-      this.subHint.setSpan(new RelativeSizeSpan(0.5f), 0, subHint.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+      //cs this.subHint.setSpan(new RelativeSizeSpan(0.5f), 0, subHint.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+      this.subHint.setSpan(new RelativeSizeSpan(1.0f), 0, subHint.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
     } else {
       this.subHint = null;
     }
