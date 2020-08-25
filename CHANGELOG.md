@@ -1,5 +1,17 @@
 # Delta Chat Android Changelog (csb0730)
 
+## v1.2.8-beta
+2020-08-25
+
+* testing more energy saving code
+
+
+## v1.2.7-beta
+2020-08-15
+
+* double MIN_PERIODIC_INTERVALL / some fixes for SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+  (don't work)
+
 ## v1.2.6-beta
 2020-08-07
 
@@ -7,10 +19,6 @@
 * r-core: introduce last_network_online status
 
 
-## v1.2.7-beta
-2020-08-15
-
-* double MIN_PERIODIC_INTERVALL / some fixes for SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
 
 ## v1.2.6-beta
 2020-07-31

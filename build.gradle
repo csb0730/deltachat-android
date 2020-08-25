@@ -92,7 +92,7 @@ android {
     defaultConfig {
         versionCode 576
         //versionName "1.2.3-testing"
-        versionName "1.2.7-beta"
+        versionName "1.2.8-beta"
 
         applicationId "com.b44t.messenger"
         multiDexEnabled true
@@ -109,7 +109,8 @@ android {
         buildConfigField "String", "MAP_ACCESS_TOKEN", '"pk.eyJ1IjoiZGVsdGFjaGF0IiwiYSI6ImNqc3c1aWczMzBjejY0M28wZmU0a3cwMzMifQ.ZPTH9dFJaav06RAu4rTYHw"'
 
         ndk {
-            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            //abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            abiFilters "armeabi-v7a"
         }
     }
 
