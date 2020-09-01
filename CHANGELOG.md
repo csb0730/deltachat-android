@@ -1,5 +1,12 @@
 # Delta Chat Android Changelog (csb0730)
 
+
+## v1.2.9-beta
+2020-09-01
+
+* fix for chatlist stucks #1602
+
+
 ## v1.2.8-beta
 2020-08-25
 

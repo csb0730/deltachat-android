@@ -209,6 +209,7 @@ public class Recipient {
   }
 
   public synchronized @Nullable ContactPhoto getContactPhoto(Context context) {
+
     LocalFileContactPhoto contactPhoto = null;
     if (dcChat!=null) {
       contactPhoto = new GroupRecordContactPhoto(context, address, dcChat);

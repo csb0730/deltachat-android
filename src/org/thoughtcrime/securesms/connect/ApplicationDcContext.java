@@ -257,13 +257,15 @@ public class ApplicationDcContext extends DcContext {
 
   @NonNull
   public Recipient getRecipient(DcChat chat) {
+    // Wenn hier (null, null) steht fehlen die Namen und das Icon der Chats in der Chatlist
+    // cs return new Recipient(context, null, null);
     return new Recipient(context, chat, null);
   }
 
   @NonNull
 
   public Recipient getRecipient(DcContact contact) {
-    return new Recipient(context, null, contact);
+      return new Recipient(context, null, contact);
   }
 
   @NonNull
@@ -278,14 +280,19 @@ public class ApplicationDcContext extends DcContext {
 
     Recipient recipient = getRecipient(chat);
     long date = summary.getTimestamp();
-    int unreadCount = getFreshMsgCount(chatId);
+    int unreadCount = getFreshMsgCount(chatId); // <== the bad call !!
+    //int unreadCount = 0;
     boolean verified = chat.isVerified();
+
 
     return new ThreadRecord(context, body, recipient, date,
         unreadCount, chatId,
         chat.getVisibility(), verified, chat.isSendingLocations(), summary);
   }
 
+
+  
+  
 
   /***********************************************************************************************
    * Working Threads

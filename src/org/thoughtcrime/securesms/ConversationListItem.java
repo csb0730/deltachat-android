@@ -28,6 +28,7 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.StyleSpan;
 import android.util.AttributeSet;
+import android.util.Log; // cs Log
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -134,6 +135,8 @@ public class ConversationListItem extends RelativeLayout
     this.msgId            = msgId;
     this.glideRequests    = glideRequests;
     this.unreadCount      = thread.getUnreadCount();
+    
+    //Log.i(TAG,"this is the bad bind()");
 
     if (highlightSubstring != null) {
       this.fromView.setText(getHighlightedSpan(locale, recipient.getName(), highlightSubstring));

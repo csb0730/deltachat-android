@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.util.Log;
 
 import com.b44t.messenger.DcChat;
 import com.b44t.messenger.DcChatlist;
@@ -32,6 +33,7 @@ import com.b44t.messenger.DcLot;
 import org.thoughtcrime.securesms.connect.ApplicationDcContext;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.GlideRequests;
+import org.thoughtcrime.securesms.database.model.ThreadRecord; // cs
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -59,6 +61,8 @@ class ConversationListAdapter extends RecyclerView.Adapter {
 
   private final Set<Long> batchSet  = Collections.synchronizedSet(new HashSet<Long>());
   private       boolean   batchMode = false;
+  
+  public static final String TAG = "DeltaChat";
 
   protected static class ViewHolder extends RecyclerView.ViewHolder {
     public <V extends View & BindableConversationListItem> ViewHolder(final @NonNull V itemView)
@@ -132,6 +136,15 @@ class ConversationListAdapter extends RecyclerView.Adapter {
     ViewHolder holder = (ViewHolder)viewHolder;
     DcChat chat = dcContext.getChat(dcChatlist.getChatId(i));
     DcLot summary = dcChatlist.getSummary(i, chat);
+    
+    //BindableConversationListItem x = holder.getItem();
+
+    //int n = dcContext.getThreadRecord1(summary, chat);  //<== das macht langsam
+    
+    //x.bind(tr, dcChatlist.getMsgId(i), summary, glideRequests, locale, batchSet, batchMode);
+    
+    // cs
+    //Log.i(TAG,"onBindViewHolder");
     holder.getItem().bind(dcContext.getThreadRecord(summary, chat), dcChatlist.getMsgId(i), summary, glideRequests, locale, batchSet, batchMode);
   }
 
