@@ -158,7 +158,7 @@ public class ComposeText extends EmojiEditText {
         try {
           inputContentInfo.requestPermission();
         } catch (Exception e) {
-          Log.w(TAG, e);
+          //cs Log.w(TAG, e);
           return false;
         }
       }

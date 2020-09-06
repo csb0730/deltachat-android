@@ -19,7 +19,7 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
 
   @Override
   protected final void onCreate(Bundle savedInstanceState) {
-    Log.w(TAG, "onCreate(" + savedInstanceState + ")");
+    //cs Log.w(TAG, "onCreate(" + savedInstanceState + ")");
     onPreCreate();
 
     if (!DcHelper.isConfigured(getApplicationContext())) {
@@ -40,19 +40,19 @@ public abstract class PassphraseRequiredActionBarActivity extends BaseActionBarA
 
   @Override
   protected void onResume() {
-    Log.w(TAG, "onResume()");
+    //cs Log.w(TAG, "onResume()");
     super.onResume();
   }
 
   @Override
   protected void onPause() {
-    Log.w(TAG, "onPause()");
+    //cs Log.w(TAG, "onPause()");
     super.onPause();
   }
 
   @Override
   protected void onDestroy() {
-    Log.w(TAG, "onDestroy()");
+    //cs Log.w(TAG, "onDestroy()");
     super.onDestroy();
   }
 

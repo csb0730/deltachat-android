@@ -94,6 +94,7 @@ public class ApplicationContext extends MultiDexApplication implements DefaultLi
             .build();
     PeriodicWorkRequest fetchWorkRequest = new PeriodicWorkRequest.Builder(
             FetchWorker.class,
+            // cs: doesn't work !!
             //(PeriodicWorkRequest.MIN_PERIODIC_INTERVAL_MILLIS * 2), // usually 15 minutes (cs: * 2)
             30,
             TimeUnit.MINUTES,

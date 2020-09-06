@@ -24,7 +24,7 @@
                       android:fontFamily="sans-serif"
                       android:hint=""
                       android:scrollHorizontally="true"
-                      android:inputType="textImeMultiLine|textNoSuggestions|textMultiLine"
+                      android:inputType="textImeMultiLine|textMultiLine|textNoSuggestions"
                       android:textSize="12sp"
                       tools:ignore="UnusedAttribute,SmallSp"/>
         </LinearLayout>
