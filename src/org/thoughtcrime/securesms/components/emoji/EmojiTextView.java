@@ -11,6 +11,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.util.Log;
 
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.components.emoji.EmojiProvider.EmojiDrawable;
@@ -21,6 +22,8 @@ import org.thoughtcrime.securesms.util.Util;
 
 public class EmojiTextView extends AppCompatTextView {
 
+  private static final  String TAG = EmojiTextView.class.getSimpleName();
+  
   private final boolean scaleEmojis;
   private final boolean createInBackground;
 
@@ -111,6 +114,7 @@ public class EmojiTextView extends AppCompatTextView {
         CharSequence ellipsized = TextUtils.ellipsize(overflow, getPaint(), getWidth(), TextUtils.TruncateAt.END);
 
         SpannableStringBuilder newContent = new SpannableStringBuilder();
+        //cs Log.i(TAG, "EmojiTextView.java");
         newContent.append(getText().subSequence(0, overflowStart))
             .append(ellipsized.subSequence(0, ellipsized.length()));
 

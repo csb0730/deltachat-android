@@ -346,9 +346,7 @@
     <!-- Translators: %1$s will be replaced by the email address -->
     <string name="login_error_cannot_login">Login als \"%1$s\" nicht möglich. Bitte E-Mail Adresse und Passwort auf Richtigkeit überprüfen.</string>
     <!-- Translators: %1$s will be replaced by the server name (eg. imap.somewhere.org) and %2$s will be replaced by the human-readable response from the server. this response may be a single word or some sentences and may or may not be localized. -->
-    <string name="login_error_server_response">Antwort von %1$s: %2$s
-
-Einige Anbieter platzieren zusätzliche Informationen im Posteingang, die Sie z.B. im Web-Frontend abrufen können. Bitten Sie Ihren Anbieter oder FreundInnen um Rat, wenn es Probleme gibt.</string>
+    <string name="login_error_server_response">Login Fehler, Antwort von %1$s: %2$s</string>
 
     <!-- TLS certificate checks -->
     <string name="accept_invalid_hostnames">Ungültige Hostnamen akzeptieren</string>

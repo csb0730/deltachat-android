@@ -96,9 +96,12 @@ public class Util {
 
   public static CharSequence getBoldedString(String value) {
     SpannableString spanned = new SpannableString(value);
+    //spanned.setSpan(new StyleSpan(Typeface.BOLD), 0,
+    //                spanned.length(),
+    //                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     spanned.setSpan(new StyleSpan(Typeface.BOLD), 0,
                     spanned.length(),
-                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
 
     return spanned;
   }

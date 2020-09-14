@@ -32,7 +32,7 @@ import java.util.concurrent.ExecutionException;
 
 class EmojiProvider {
 
-  private static final    String        TAG      = EmojiProvider.class.getSimpleName();
+  private static final    String        TAG          = EmojiProvider.class.getSimpleName();
   protected static volatile EmojiProvider instance = null;
   private static final    Paint         paint    = new Paint(Paint.FILTER_BITMAP_FLAG | Paint.ANTI_ALIAS_FLAG);
 
@@ -96,8 +96,11 @@ class EmojiProvider {
       Drawable drawable = getEmojiDrawable(candidate.getDrawInfo(), background);
 
       if (drawable != null) {
+        //cs Log.i(TAG, "EmojiProvider.java"); // das ist es auch nicht
+        //builder.setSpan(new EmojiSpan(drawable, tv), candidate.getStartIndex(), candidate.getEndIndex(),
+        //                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         builder.setSpan(new EmojiSpan(drawable, tv), candidate.getStartIndex(), candidate.getEndIndex(),
-                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
       }
     }
 

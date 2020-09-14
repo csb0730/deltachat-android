@@ -509,7 +509,8 @@ public class ConversationItem extends LinearLayout
       for (URLSpan urlSpan : urlSpans) {
         int start = messageBody.getSpanStart(urlSpan);
         int end = messageBody.getSpanEnd(urlSpan);
-        messageBody.setSpan(new LongClickCopySpan(urlSpan.getURL()), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //messageBody.setSpan(new LongClickCopySpan(urlSpan.getURL()), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        messageBody.setSpan(new LongClickCopySpan(urlSpan.getURL()), start, end, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
       }
     }
     return messageBody;

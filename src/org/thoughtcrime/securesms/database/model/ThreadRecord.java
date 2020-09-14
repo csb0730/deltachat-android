@@ -97,9 +97,11 @@ public class ThreadRecord {
 
   private SpannableString emphasisAdded(String sequence, int start, int end) {
     SpannableString spannable = new SpannableString(sequence);
+    //spannable.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC),
+    //                  start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     spannable.setSpan(new StyleSpan(android.graphics.Typeface.ITALIC),
-                      start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-    return spannable;
+                      start, end, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+   return spannable;
   }
 
   public int getUnreadCount() {

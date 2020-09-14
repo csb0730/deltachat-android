@@ -12,6 +12,7 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.components.emoji.EmojiTextView;
@@ -46,18 +47,21 @@ public class FromTextView extends EmojiTextView {
     } else {
       typeface = Typeface.NORMAL;
     }
-
+    //cs Log.i(TAG, "FromTextView.java"); // cs das ist es nicht
     SpannableStringBuilder builder = new SpannableStringBuilder();
-
+    
     SpannableString fromSpan = new SpannableString(fromString);
     fromSpan.setSpan(new StyleSpan(typeface), 0, builder.length(),
                      Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
 
     if (recipient.getName() == null && !TextUtils.isEmpty(recipient.getProfileName())) {
       SpannableString profileName = new SpannableString(" (~" + recipient.getProfileName() + ") ");
-      profileName.setSpan(new CenterAlignedRelativeSizeSpan(0.75f), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-      profileName.setSpan(new TypefaceSpan("sans-serif-light"), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-      profileName.setSpan(new ForegroundColorSpan(ResUtil.getColor(getContext(), R.attr.conversation_list_item_subject_color)), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      //profileName.setSpan(new CenterAlignedRelativeSizeSpan(0.75f), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      //profileName.setSpan(new TypefaceSpan("sans-serif-light"), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      //profileName.setSpan(new ForegroundColorSpan(ResUtil.getColor(getContext(), R.attr.conversation_list_item_subject_color)), 0, profileName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      profileName.setSpan(new CenterAlignedRelativeSizeSpan(0.75f), 0, profileName.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+      profileName.setSpan(new TypefaceSpan("sans-serif-light"), 0, profileName.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+      profileName.setSpan(new ForegroundColorSpan(ResUtil.getColor(getContext(), R.attr.conversation_list_item_subject_color)), 0, profileName.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
 
       if (ViewCompat.getLayoutDirection(this) == ViewCompat.LAYOUT_DIRECTION_RTL){
         builder.append(profileName);
