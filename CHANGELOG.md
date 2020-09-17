@@ -1,5 +1,12 @@
 # Delta Chat Android Changelog (csb0730)
 
+## v1.2.10-beta
+2020-09-17
+
+* Experimental Broadcast Groups
+  (add #BCC to the name of group for using)
+  This is basically a new core function v1.2.8.
+
 
 ## v1.2.9-beta
 2020-09-01
