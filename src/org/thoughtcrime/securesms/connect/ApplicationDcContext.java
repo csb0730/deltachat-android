@@ -93,10 +93,11 @@ public class ApplicationDcContext extends DcContext {
     } catch (Exception e) {
 
     }
-
-    if (!isScreenOn) {
+    
+    // #1302
+    //if (!isScreenOn) {
       KeepAliveService.startSelf(context);
-    }
+    //}
   }
 
   public void setStockTranslations() {

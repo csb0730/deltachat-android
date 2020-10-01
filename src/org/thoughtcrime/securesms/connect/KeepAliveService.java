@@ -24,15 +24,19 @@ public class KeepAliveService extends Service {
     public static void startSelf(Context context)
     {
         try {
+            
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 PowerManager powerManager = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
                 if(powerManager.isIgnoringBatteryOptimizations(context.getPackageName())) {
                     return; // fine, the user has disabled the battery optimisations for us
                 }
             }
+            /* cs switch always on, even Android 4.1 needs the service!
             else {
                 return; // android <= lollipop does not have a doze mode
             }
+            */
+            
 
             // if we're here, we're on a system with doze mode and battery optimisations enabled.
             // add foreground notification to stay alive.
@@ -40,9 +44,11 @@ public class KeepAliveService extends Service {
                 // the started service has to call startForeground() within 5 seconds,
                 // see https://developer.android.com/about/versions/oreo/android-8.0-changes
                 context.startForegroundService(new Intent(context, KeepAliveService.class));
+                Log.i("DeltaChat", "*** Foreground KeepAliveService started");
             }
             else {
                 context.startService(new Intent(context, KeepAliveService.class));
+                Log.i("DeltaChat", "*** KeepAliveService started");
             }
         }
         catch(Exception e) {
@@ -117,6 +123,7 @@ public class KeepAliveService extends Service {
             createFgNotificationChannel(this);
             builder.setChannelId(FG_CHANNEL_ID);
         }
+        Log.i("DeltaChat", "*** createNotification done");
         return builder.build();
     }
 

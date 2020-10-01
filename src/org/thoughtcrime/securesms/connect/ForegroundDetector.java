@@ -37,7 +37,8 @@ public class ForegroundDetector implements Application.ActivityLifecycleCallback
     public void onActivityStarted(Activity activity) {
         refs++;
 
-        activity.stopService(new Intent(activity, KeepAliveService.class));
+        // #1302
+        //activity.stopService(new Intent(activity, KeepAliveService.class));
         
         application.dcContext.startThreads(0);
     }
