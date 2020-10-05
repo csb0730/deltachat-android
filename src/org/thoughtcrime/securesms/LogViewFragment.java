@@ -138,7 +138,8 @@ public class LogViewFragment extends Fragment {
 
       String line;
       while ((line = bufferedReader.readLine()) != null) {
-        if (!line.contains("dalvikvm")){
+        // cs: exclude Android 4 issues 
+        if (!(line.contains("dalvikvm") || line.contains("SPAN_EXCLUSIVE_EXCLUSIVE"))){
             log.append(line);
             log.append(separator);
         }

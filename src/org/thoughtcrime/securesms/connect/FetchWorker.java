@@ -24,11 +24,11 @@ public class FetchWorker extends Worker {
         //   fetch-sendbox is not needed as these messages shall not be notified.
         // - when threads are running: interrupt-all-idle
 
-        Log.i("DeltaChat", "-------------------- FetchWorker.doWork() started --------------------");
+        //Log.i("DeltaChat", "-------------------- FetchWorker.doWork() started --------------------");
         ApplicationDcContext dcContext = DcHelper.getContext(context);
         dcContext.startThreads(ApplicationDcContext.INTERRUPT_IDLE);
         dcContext.waitForThreadsExecutedOnce();
-        Log.i("DeltaChat", "-------------------- FetchWorker.doWork() done --------------------");
+        //Log.i("DeltaChat", "-------------------- FetchWorker.doWork() done --------------------");
 
         return Result.success(); // when returning, the os may terminate the app again
     }
