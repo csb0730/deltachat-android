@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_other">
+
+        <Preference android:key="pref_view_log"
+                    android:title="@string/pref_view_log"/>
+    </PreferenceCategory>
+
+
     <PreferenceCategory android:title="@string/autocrypt">
 
         <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
@@ -61,10 +68,4 @@
 
     </PreferenceCategory>
 
-
-    <PreferenceCategory android:title="@string/pref_other">
-
-        <Preference android:key="pref_view_log"
-                    android:title="@string/pref_view_log"/>
-    </PreferenceCategory>
 </PreferenceScreen>
