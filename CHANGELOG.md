@@ -1,5 +1,10 @@
 # Delta Chat Android Changelog (csb0730)
 
+## v1.2.13-beta
+
+* update core to 1.27.9 (more optimizations for imap idle)
+
+
 ## v1.2.12-beta
 
 * update core to 1.27.8 (better imap idle)
@@ -7,7 +12,7 @@
 
 ## v1.2.11-beta
 
-* introduce permanent foreground notifications (pr #1302)
+* force permanent foreground notifications (pr #1302)
 
 
 ## v1.2.10-beta

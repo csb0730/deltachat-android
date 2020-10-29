@@ -1,20 +1,21 @@
 package org.thoughtcrime.securesms;
 
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+
+import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ProcessLifecycleOwner;
+import androidx.multidex.MultiDexApplication;
 import androidx.work.Constraints;
 import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.NetworkType;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import androidx.annotation.NonNull;
-import androidx.multidex.MultiDexApplication;
 
 import com.b44t.messenger.DcContext;
 import com.b44t.messenger.DcEventCenter;
@@ -26,8 +27,8 @@ import org.thoughtcrime.securesms.geolocation.DcLocationManager;
 import org.thoughtcrime.securesms.jobmanager.JobManager;
 import org.thoughtcrime.securesms.notifications.MessageNotifierCompat;
 import org.thoughtcrime.securesms.util.AndroidSignalProtocolLogger;
-import org.thoughtcrime.securesms.util.DynamicLanguage;
 import org.thoughtcrime.securesms.util.BadgeUtil;
+import org.thoughtcrime.securesms.util.DynamicLanguage;
 import org.thoughtcrime.securesms.util.ScreenLockUtil;
 import org.thoughtcrime.securesms.util.SignalProtocolLoggerProvider;
 
@@ -36,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationContext extends MultiDexApplication implements DefaultLifecycleObserver {
 
-  public ApplicationDcContext   dcContext;
+  public ApplicationDcContext dcContext;
   public DcLocationManager      dcLocationManager;
   private JobManager            jobManager;
   private volatile boolean    isAppVisible;
@@ -132,6 +133,10 @@ public class ApplicationContext extends MultiDexApplication implements DefaultLi
   }
 
   private void initializeLogging() {
+    // cs: this is for doc only
+    //String s = String.format("%d", android.util.Log.INFO);
+    //System.setProperty("log.tag.DeltaChat", s);
+    
     SignalProtocolLoggerProvider.setProvider(new AndroidSignalProtocolLogger());
   }
 
