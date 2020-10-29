@@ -131,7 +131,7 @@ public class LogViewFragment extends Fragment {
 
   private static String grabLogcat() {
     try {
-      //cs: *:I don't show verbose lines
+      //cs: *:I => don't show verbose lines, I == Information and higher
       final Process         process        = Runtime.getRuntime().exec("logcat -v threadtime -d *:I");
       final BufferedReader  bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
       final StringBuilder   log            = new StringBuilder();
