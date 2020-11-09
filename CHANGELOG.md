@@ -1,5 +1,12 @@
 # Delta Chat Android Changelog (csb0730)
 
+## v1.2.14-beta
+
+* use external sd card as backup dir
+  valid locations for sd card under "/storage/"
+  using "Downloads" dir as a fallback if external sd card is not found
+  
+
 ## v1.2.13-beta
 
 * update core to 1.27.9 (more optimizations for imap idle)

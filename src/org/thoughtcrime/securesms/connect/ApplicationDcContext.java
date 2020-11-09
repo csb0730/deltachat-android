@@ -140,6 +140,24 @@ public class ApplicationDcContext extends DcContext {
   }
 
   public File getImexDir() {
+    // cs: detect first removable external sd card
+    // original code from: https://gist.github.com/PauloLuan/4bcecc086095bce28e22
+    String removableStoragePath;
+    File fileList[] = new File("/storage/").listFiles();
+    for (File file : fileList) {
+        if( !file.getAbsolutePath().equalsIgnoreCase(Environment.getExternalStorageDirectory().getAbsolutePath()) &&
+            file.isDirectory() &&
+            file.canWrite() ) {
+                //If there is an SD Card, removableStoragePath will have it's path. If there isn't it will be an empty string.
+                removableStoragePath = file.getAbsolutePath();
+                Log.i(TAG, "getImexDir: set to external sd card: " + removableStoragePath);
+                return file;
+        }
+    }
+    
+    Log.i(TAG, "getImexDir: no sd card found, taking fallback: set to internal Downloads dir");
+
+    // original code from DC:
     // DIRECTORY_DOCUMENTS is only available since KitKat;
     // as we also support Ice Cream Sandwich and Jellybean (2017: 11% in total), this is no option.
     // Moreover, DIRECTORY_DOWNLOADS seems to be easier accessible by the user,
